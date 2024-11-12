@@ -37,10 +37,39 @@ public class Array {
         return secondLargest;
     }
 
+    // array is sorted are not
+    public static boolean isSorted(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] > nums[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // reverse the array eleements
+    public static int[] reverseArray(int[] nums) {
+        int i = 0, j = nums.length - 1;
+        while (i < j) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+        return nums;
+    }
+
+    public static void printArray(int[] nums) {
+        for (int i : nums) {
+            System.out.println(i);
+        }
+    }
+
     public static void main(String[] args) {
-        int nums[] = { 1, 2, 5, 3, 7 };
-        int ans = findSecond(nums);
-        System.out.println(ans);
+        int nums[] = { 1, 2, 5 };
+        nums = reverseArray(nums);
+        printArray(nums);
 
     }
 }
