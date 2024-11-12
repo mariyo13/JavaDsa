@@ -21,9 +21,26 @@ public class Array {
         return res;
     }
 
+    // to find the second largest number
+    public static int findSecond(int[] nums) {
+        int firstLargest = nums[0];
+        int secondLargest = nums[0];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > firstLargest) {
+                secondLargest = firstLargest;
+                firstLargest = nums[i];
+            }
+            if (secondLargest < nums[i] && nums[i] != firstLargest) {
+                secondLargest = nums[i];
+            }
+        }
+        return secondLargest;
+    }
+
     public static void main(String[] args) {
         int nums[] = { 1, 2, 5, 3, 7 };
-        int ans = findMin(nums);
+        int ans = findSecond(nums);
         System.out.println(ans);
+
     }
 }
