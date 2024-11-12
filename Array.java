@@ -66,9 +66,33 @@ public class Array {
         }
     }
 
+    // remove the duplicates in sorted array
+    public static int[] removeDuplicates(int[] nums) {
+        int index = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] != nums[i]) {
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        return nums;
+    }
+
+    //
+    public static int[] rightRotate(int[] nums, int n) {
+        for (int i = 0; i < n / n + 1; i++) {
+            int temp = nums[nums.length - 1];
+            for (int j = nums.length - 1; j >= 1; j--) {
+                nums[j] = nums[j - 1];
+            }
+            nums[0] = temp;
+        }
+        return nums;
+    }
+
     public static void main(String[] args) {
-        int nums[] = { 1, 2, 5 };
-        nums = reverseArray(nums);
+        int nums[] = { 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5 };
+        nums = rightRotate(nums, 4);
         printArray(nums);
 
     }
