@@ -90,10 +90,22 @@ public class Array {
         return nums;
     }
 
+    // frequencies of the elements
+    public static void numberFrequency(int[] nums) {
+        int frequencies = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                frequencies++;
+            } else {
+                System.out.println(nums[i - 1] + ":" + frequencies);
+                frequencies = 1;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int nums[] = { 1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5 };
-        nums = rightRotate(nums, 4);
-        printArray(nums);
+        numberFrequency(nums);
 
     }
 }
