@@ -87,15 +87,15 @@ public class LinkedList {
         LinkedList linkedList = new LinkedList();
         linkedList.displayLL();
         linkedList.addFirst(1);
-        linkedList.addFirst(2);
+        linkedList.addFirst(10);
+        linkedList.addFirst(1);
+        linkedList.addFirst(10);
+
         linkedList.displayLL();
-        linkedList.addFirst(3);
-        linkedList.addFirst(4);
-        linkedList.addFirst(5);
-        linkedList.addFirst(6);
+        linkedList.addLast(11);
         linkedList.displayLL();
-        // linkedList.deleteLast();
-        // linkedList.displayLL();
+        linkedList.addLast(11);
+        linkedList.displayLL();
     }
 
 }
