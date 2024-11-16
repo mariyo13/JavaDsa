@@ -31,6 +31,18 @@ public class LinkedList {
         return;
     }
 
+    public void addLast(int val) {
+        Node node = new Node(val);
+        if (head == null) {
+            head = node;
+            tail = node;
+            return;
+        }
+        tail.nexNode = node;
+        tail = node;
+        return;
+    }
+
     public void displayLL() {
         if (head == null) {
             System.out.println("enter to data in the ll");
@@ -51,6 +63,11 @@ public class LinkedList {
         linkedList.addFirst(10);
         linkedList.addFirst(1);
         linkedList.addFirst(10);
+
+        linkedList.displayLL();
+        linkedList.addLast(11);
+        linkedList.displayLL();
+        linkedList.addLast(11);
         linkedList.displayLL();
     }
 
