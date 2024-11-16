@@ -58,17 +58,7 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.displayLL();
-        linkedList.addFirst(1);
-        linkedList.addFirst(10);
-        linkedList.addFirst(1);
-        linkedList.addFirst(10);
-
-        linkedList.displayLL();
-        linkedList.addLast(11);
-        linkedList.displayLL();
-        linkedList.addLast(11);
-        linkedList.displayLL();
+      
     }
 
 }
