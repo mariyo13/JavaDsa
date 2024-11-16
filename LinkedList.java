@@ -23,7 +23,7 @@ public class LinkedList {
         Node node = new Node(num);
         if (head == null) {
             head = node;
-            tail = node;
+            tail = head;
             return;
         }
         node.nexNode = head;
@@ -43,13 +43,40 @@ public class LinkedList {
         return;
     }
 
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("nothing to delete");
+            return;
+        }
+        head = head.nexNode;
+        return;
+    }
+
+    public void deleteLast() {
+        if (tail == null) {
+            System.out.println("nothing to delete");
+            return;
+        }
+        Node curr = head;
+        Node nextNode = head.nexNode;
+        if (nextNode == null) {
+            tail = curr;
+        }
+        while (nextNode != tail) {
+            curr = nextNode;
+            nextNode = nextNode.nexNode;
+        }
+        tail = nextNode;
+        return;
+    }
+
     public void displayLL() {
         if (head == null) {
             System.out.println("enter to data in the ll");
             return;
         }
         Node temNode = head;
-        while (temNode != null) {
+        while (temNode != tail.nexNode) {
             System.out.print("-> " + temNode.data);
             temNode = temNode.nexNode;
         }
@@ -60,15 +87,15 @@ public class LinkedList {
         LinkedList linkedList = new LinkedList();
         linkedList.displayLL();
         linkedList.addFirst(1);
-        linkedList.addFirst(10);
-        linkedList.addFirst(1);
-        linkedList.addFirst(10);
-
+        linkedList.addFirst(2);
         linkedList.displayLL();
-        linkedList.addLast(11);
+        linkedList.addFirst(3);
+        linkedList.addFirst(4);
+        linkedList.addFirst(5);
+        linkedList.addFirst(6);
         linkedList.displayLL();
-        linkedList.addLast(11);
-        linkedList.displayLL();
+        // linkedList.deleteLast();
+        // linkedList.displayLL();
     }
 
 }
