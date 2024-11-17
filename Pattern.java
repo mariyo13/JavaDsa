@@ -35,7 +35,19 @@ public class Pattern {
         }
     }
 
+    public static void pattern5(int n) {
+        int k = 1;
+        for (int i = 1; i <= n; i++) {
+            ;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(k + " ");
+                k++;
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        pattern4(5);
+        pattern5(5);
     }
 }
