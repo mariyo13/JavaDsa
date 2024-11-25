@@ -117,9 +117,9 @@ public class Pattern {
             for (int j = 5; j >= n - i + 1; j--) {
                 System.out.print(j + " ");
             }
-            for (int j = ; j ; j) {
-                System.out.print(j + " ");
-            }
+            // for (int j = ; j ; j) {
+            // System.out.print(j + " ");
+            // }
 
             System.out.println();
         }
