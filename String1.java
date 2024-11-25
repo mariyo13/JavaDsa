@@ -1,3 +1,6 @@
+
+import java.util.Stack;
+
 public class String1 {
     // to check wheather given String is polindrem are not
     public static boolean isPolindrem(String str) {
@@ -56,10 +59,27 @@ public class String1 {
 
     }
 
+    // not a best solution
+    public static String revseString(String str) {
+        String ans = " ";
+        Stack<String> s = new Stack();
+        String temp = " ";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != ' ') {
+                temp += str.charAt(i);
+            } else {
+                s.add(temp);
+                temp = " ";
+            }
+        }
+        while (!s.isEmpty()) {
+            ans += s.pop();
+            ans += " ";
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
-        System.out.println(isPolindrem("manu"));
-        System.out.println(isPolindrem("malalam"));
-        System.out.println(isSubequence("greeksforgreeks", "grf"));
-        System.out.println(isAnagram("manu", "unam"));
+        System.out.println(revseString("i love yamuna"));
     }
 }

@@ -109,7 +109,24 @@ public class Pattern {
 
     }
 
+    public static void pattern10(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print("_" + " ");
+            }
+            for (int j = 5; j >= n - i + 1; j--) {
+                System.out.print(j + " ");
+            }
+            for (int j = ; j ; j) {
+                System.out.print(j + " ");
+            }
+
+            System.out.println();
+        }
+
+    }
+
     public static void main(String[] args) {
-        pattern9(5);
+        pattern10(5);
     }
 }
