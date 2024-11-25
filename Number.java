@@ -53,7 +53,31 @@ public class Number {
         return digits;
     }
 
+    static boolean isAmstrongNumber(int n) {
+        int digits = numberDigits(n);
+        int temp = n;
+        int ans = 0;
+        while (n != 0) {
+            int rem = n % 10;
+            ans += (int) Math.pow(rem, digits);
+            n = n / 10;
+        }
+        System.out.println(ans);
+        if (temp == ans) {
+            return true;
+        }
+        return false;
+    }
+
+    static void numberAmstrongNumber(int n) {
+        for (int i = 1; i <= n; i++) {
+            if (isAmstrongNumber(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(numberDigits(4545));
+        numberAmstrongNumber(1000);
     }
 }
