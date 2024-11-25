@@ -34,7 +34,26 @@ public class Number {
         }
     }
 
+    static int reverseNumber(int n) {
+        int ans = 0;
+        while (n != 0) {
+            int rem = n % 10;
+            ans = ans * 10 + rem;
+            n = n / 10;
+        }
+        return ans;
+    }
+
+    static int numberDigits(int n) {
+        int digits = 0;
+        while (n != 0) {
+            digits++;
+            n = n / 10;
+        }
+        return digits;
+    }
+
     public static void main(String[] args) {
-        nPrimeNumber(100);
+        System.out.println(numberDigits(4545));
     }
 }
