@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LinkedList {
 
     class Node {
@@ -83,19 +85,61 @@ public class LinkedList {
         System.out.println("->" + "null");
     }
 
+    public boolean search(int data) {
+        if (head == null) {
+            return false;
+        }
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == data) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.displayLL();
-        linkedList.addFirst(1);
-        linkedList.addFirst(10);
-        linkedList.addFirst(1);
-        linkedList.addFirst(10);
-
-        linkedList.displayLL();
-        linkedList.addLast(11);
-        linkedList.displayLL();
-        linkedList.addLast(11);
-        linkedList.displayLL();
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("         **********************             ");
+            System.out.println("press 1 addFirst");
+            System.out.println("press 2 display");
+            System.out.println("press 3 exit");
+            System.out.println("press 4 addlast");
+            System.out.println("press 5 deletefirst");
+            System.out.println("press 6 deletelast");
+            System.out.println("press 7  search");
+            switch (sc.nextInt()) {
+                case 1:
+                    System.out.println("enter the value to add");
+                    linkedList.addFirst(sc.nextInt());
+                    break;
+                case 2:
+                    linkedList.displayLL();
+                    break;
+                case 3:
+                    System.exit(0);
+                    break;
+                case 4:
+                    System.out.println("enter the value to add");
+                    linkedList.addLast(sc.nextInt());
+                    break;
+                case 5:
+                    linkedList.deleteFirst();
+                    break;
+                case 6:
+                    linkedList.deleteLast();
+                    break;
+                case 7:
+                    System.out.println("enter the value to search");
+                    boolean rs = linkedList.search(sc.nextInt());
+                    System.out.println(rs ? "the value is present" : "the value not present");
+                    break;
+                default:
+                    System.out.println("no service for this value");
+            }
+        }
     }
 
 }
