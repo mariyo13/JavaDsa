@@ -86,8 +86,18 @@ public class Number {
         }
         return res;
     }
+    static boolean isHappyNumber(int n){
+        int res=sumSquare(n);
+        while (res != 1 && res !=4) {
+            res=sumSquare(res);
+        }
+        if(res == 1){
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
-       System.out.println(sumSquare(13));
+       System.out.println(isHappyNumber(14));
     }
 }
