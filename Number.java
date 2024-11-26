@@ -76,8 +76,18 @@ public class Number {
             }
         }
     }
+    static int sumSquare(int n){
+        int res=0;
+
+        while (n != 0) {
+            int rem =n%10;
+            res=res+(rem*rem);
+            n=n/10;
+        }
+        return res;
+    }
 
     public static void main(String[] args) {
-        numberAmstrongNumber(1000);
+       System.out.println(sumSquare(13));
     }
 }
